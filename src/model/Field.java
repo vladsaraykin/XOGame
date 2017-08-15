@@ -9,6 +9,9 @@ public class Field {
     private static final int SIZE = 3;
     private TypeField[][] field;
 
+    public static int getSIZE() {
+        return SIZE;
+    }
 //    private boolean trigger = true;
 
 
@@ -75,9 +78,6 @@ public class Field {
             }
         }
         result = 1;
-
-    
-
 
         return TypeField.NOT_SET;
     }

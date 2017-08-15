@@ -1,5 +1,6 @@
 package controllers;
 
+import model.Field;
 import model.User;
 import model.Point;
 import java.awt.*;

@@ -1,6 +1,7 @@
 package views;
 
 import controllers.GameWindowController;
+import model.Field;
 import model.Point;
 import javax.swing.*;
 import java.awt.*;
@@ -16,10 +17,10 @@ public class GameWindow extends JFrame {
         setTitle("XO Game");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jPanel.setLayout(new GridLayout(3, 3));
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < Field.getSIZE(); i++) {
+            for (int j = 0; j < Field.getSIZE(); j++) {
                 JButton jButton = new JButton();
-                jButton.setText("  ");
+                jButton.setText("");
                 buttons[i][j] = jButton;
                 jPanel.add(jButton);
 
@@ -31,6 +32,7 @@ public class GameWindow extends JFrame {
                         String buttonText = e.getActionCommand();
                         System.out.printf("Button: %s, x: %d, y: %d %n", buttonText, finalJ, finalI);
                         GameWindowController.doShoot(new Point(finalI, finalJ));
+                        jButton.setText("X");
                     }
                 });
             }
