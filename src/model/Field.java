@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 /**
  * Created by Vladislav on 10.07.2017.
  */
@@ -78,10 +76,29 @@ public class Field {
             }
         }
         result = 1;
+        for (int i = 1; i < field.length; i++) {
+            if (field[0][0] == field[i][i]) {
+                result++;
+                if (result == field.length) {
+                    return field[0][0];
+                }
+            } else {
+                result = 1;
+                break;
+            }
+        }
+        result = 1;
+
+
+            if (field[0][2] == field[1][1]) {
+                if (field[0][2] == field[2][0]) {
+                    return field[0][2];
+                }
+            }
+
 
         return TypeField.NOT_SET;
     }
-
 
 
     public void showField() {
